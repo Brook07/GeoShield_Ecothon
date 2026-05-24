@@ -1,5 +1,8 @@
 # Data
-data/
+# data/ (Uncommented for specific push)
+
+# Large files
+/data/processed/rasters/stack/feature_stack.tif
 
 # VS Code
 .vscode/
