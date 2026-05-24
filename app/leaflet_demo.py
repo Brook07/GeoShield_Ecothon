@@ -4,7 +4,7 @@ import folium
 import geopandas as gpd
 from localtileserver import TileClient, get_leaflet_tile_layer
 
-PROJECT_ROOT = Path(r"D:/Side_Projects/Geoshield_ai")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS_DIR = PROJECT_ROOT / "data" / "outputs"
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 

@@ -7,7 +7,7 @@ import numpy as np
 import rasterio
 from localtileserver import TileClient
 
-PROJECT_ROOT = Path(r"D:/Side_Projects/Geoshield_ai")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_RASTER_DIR = PROJECT_ROOT / "data" / "processed" / "rasters" / "aligned"
 PROCESSED_VECTOR_DIR = PROJECT_ROOT / "data" / "processed" / "vectors"
 PROCESSED_INVENTORY_DIR = PROJECT_ROOT / "data" / "processed" / "inventory"
@@ -98,7 +98,16 @@ def index():
             import joblib
             model = joblib.load(MODEL_PATH)
             if hasattr(model, "feature_importances_"):
-                names = ["slope", "aspect", "twi", "rainfall", "ndvi", "landcover", "road_distance", "river_distance"]
+          names = [
+            "slope",
+            "aspect",
+            "twi",
+            "rainfall",
+            "ndvi",
+            "landcover",
+            "road_distance",
+            "river_distance",
+          ]
                 importances = list(zip(names, model.feature_importances_))
                 importances.sort(key=lambda x: x[1], reverse=True)
                 top_features = [(n, round(float(v), 4)) for n, v in importances[:5]]
