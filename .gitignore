@@ -1,9 +1,0 @@
-# Data
-# data/ (Uncommented for specific push)
-data/Raw_Sindhupalchowk_Dataset_Landslide/
-
-# Large files
-/data/processed/rasters/stack/feature_stack.tif
-
-# VS Code
-.vscode/
